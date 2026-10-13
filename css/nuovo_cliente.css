@@ -1,0 +1,45 @@
+.clienti-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.clienti-container label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #333;
+}
+
+.clienti-container input,
+.clienti-container select,
+.clienti-container textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+.clienti-container textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.clienti-container .btn {
+  align-self: flex-end;
+  padding: 10px 20px;
+  background-color: #2196F3;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.clienti-container .btn:hover {
+  background-color: #1976D2;
+}

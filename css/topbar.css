@@ -1,0 +1,442 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive > table {
+  width: 100%;
+}
+
+/* ---------------- Topbar Base ---------------- */
+.navbar-modern {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: linear-gradient(-45deg, #1e3a8a, #3b82f6, #60a5fa, #93c5fd);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #fff;
+  position: sticky;
+  top: -1px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  font-family: 'Poppins', sans-serif;
+  flex-wrap: wrap;
+  margin: 0;
+  border-top: 0;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.navbar-left .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  margin: 0;
+  line-height: 1;
+}
+
+.navbar-left .brand:hover {
+  color: #fff;
+  opacity: 0.95;
+}
+
+/* ---------------- Link ---------------- */
+.navbar-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover,
+.navbar-links .active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ---------------- User Area ---------------- */
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #f1f1f1;
+  margin-top: 0;
+  flex-wrap: wrap;
+}
+
+.logout-btn {
+  background: #ef4444;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* ---------------- Notification Bell ---------------- */
+.notification-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.notification-bell {
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  color: #fff;
+  margin-right: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.notification-bell:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.notification-bell:active {
+  transform: scale(0.96);
+}
+
+.notification-bell .fa-bell {
+  font-size: 20px;
+}
+
+.notification-bell .badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 11px;
+  min-width: 20px;
+  height: 20px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  border: 2px solid #1e3a8a;
+}
+
+/* ---------------- Dropdown Notifiche ---------------- */
+.notification-dropdown {
+  display: none;
+  position: absolute;
+  top: 32px;
+  right: 0;
+  background: white;
+  color: #333;
+  min-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  padding: 10px 15px;
+  font-size: 14px;
+  z-index: 9999;
+}
+
+.notification-dropdown.visible {
+  display: block;
+}
+
+.notification-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-dropdown li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.notification-dropdown li:last-child {
+  border-bottom: none;
+}
+
+/* ---------------- Toast Notifica Push ---------------- */
+.toast-notifica {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #ef4444;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  animation: fadeIn 0.6s ease;
+}
+
+.toast-notifica i {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.toast-close {
+  margin-left: auto;
+  cursor: pointer;
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------- Modale Notifiche ---------------- */
+.notifiche-modal {
+  display: none;
+  position: fixed;
+  z-index: 11000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.notifiche-modal.open {
+  display: flex;
+}
+
+.notifiche-content {
+  background: white;
+  color: #333;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 18px 16px;
+  border-radius: 10px;
+  width: min(520px, 100%);
+  height: min(760px, calc(100vh - 32px));
+  max-height: calc(100vh - 32px);
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+  animation: slideDown 0.3s ease-out;
+  font-family: 'Poppins', sans-serif;
+}
+
+.notifiche-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.notifiche-content h4 {
+  margin-top: 0;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #1e3a8a;
+  padding-right: 26px;
+  flex: 0 0 auto;
+}
+
+.notifiche-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notifiche-content li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  line-height: 1.35;
+}
+
+.notifiche-content li strong {
+  word-break: break-word;
+}
+
+.notifiche-content li small {
+  color: #64748b;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: #ef4444;
+}
+
+.notifiche-actions {
+  margin-top: 12px;
+  text-align: right;
+  flex: 0 0 auto;
+}
+
+@supports (height: 100dvh) {
+  .notifiche-content {
+    height: min(760px, calc(100dvh - 32px));
+    max-height: calc(100dvh - 32px);
+  }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+  .navbar-modern {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 8px;
+  }
+
+  .navbar-left,
+  .navbar-links,
+  .navbar-user {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+  }
+
+  .navbar-user {
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .user-dropdown {
+    min-width: 0;
+  }
+
+  .user-dropdown span {
+    max-width: calc(100vw - 130px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .notifiche-modal {
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .notifiche-content {
+    margin-top: 64px;
+    border-radius: 12px;
+    height: min(760px, calc(100vh - 76px));
+    max-height: calc(100vh - 76px);
+  }
+
+  .notifiche-content h4 {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .notifiche-content li {
+    font-size: 14px;
+  }
+
+  .notifiche-content li small {
+    display: block;
+  }
+
+  .notifiche-actions {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .toast-notifica {
+    bottom: 20px;
+    right: 15px;
+    left: 15px;
+    font-size: 13px;
+    padding: 10px 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .toast-close {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .notifiche-content {
+    padding: 20px 14px 14px;
+  }
+
+  .notifiche-content ul {
+    font-size: 14px;
+  }
+}
+
+@supports (height: 100dvh) {
+  @media (max-width: 768px) {
+    .notifiche-content {
+      height: min(760px, calc(100dvh - 76px));
+      max-height: calc(100dvh - 76px);
+    }
+  }
+}

@@ -1,0 +1,358 @@
+/* Reset base */
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #f4f6f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.clienti-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid #e3e3e3;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Barra superiore */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.top-bar h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+  margin: 0;
+}
+
+/* Pulsanti */
+.btn-add, .btn {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-add:hover, .btn:hover {
+  background-color: #1976D2;
+}
+
+/* Tabella */
+.clienti-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.clienti-table th, .clienti-table td {
+  padding: 14px 16px;
+  text-align: left;
+  vertical-align: top;
+  word-break: break-word;
+}
+
+.clienti-table th {
+  background-color: #f1f3f5;
+  font-weight: bold;
+  color: #333;
+}
+
+.clienti-table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.clienti-table tbody tr:hover {
+  background-color: #f9fbfc;
+}
+
+/* Azioni */
+.btn-edit, .btn-delete {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  margin-right: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background-color: #FFC107;
+  color: white;
+}
+
+.btn-delete {
+  background-color: #F44336;
+  color: white;
+}
+
+/* Campo ricerca */
+.input-search {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 200px;
+}
+
+.top-bar form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.top-bar form input[type="text"],
+.top-bar form input[type="date"],
+.top-bar form select,
+.top-bar form .input-search {
+  min-width: 180px;
+}
+
+.top-bar form label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* MODALI */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(2px);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal.show {
+  display: flex !important;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  animation: fadeInUp 0.3s ease;
+  position: relative;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-content h2 {
+  text-align: center;
+  color: #3b82f6;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.modal-content button.btn {
+  width: 100%;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal-content button.btn:hover {
+  background-color: #2563eb;
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #f44336;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .clienti-container {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+  .card {
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .top-bar h2 {
+    font-size: 20px;
+  }
+
+  .top-bar > div {
+    width: 100%;
+  }
+
+  .top-bar form {
+    width: 100%;
+  }
+
+  .top-bar form > * {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .top-bar .btn,
+  .top-bar .btn-add,
+  .top-bar .btn-export {
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    margin-bottom: 6px;
+  }
+
+  .clienti-table thead {
+    display: none;
+  }
+
+  .clienti-table tr {
+    display: block;
+    margin-bottom: 15px;
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+
+  .clienti-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    gap: 10px;
+    flex-wrap: wrap;
+    text-align: right;
+  }
+
+  .clienti-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+    text-align: left;
+    min-width: 40%;
+  }
+
+  .modal {
+    padding: 12px;
+  }
+
+  .modal-content {
+    padding: 18px 14px;
+    border-radius: 12px;
+    max-height: calc(100dvh - 24px);
+  }
+}
+
+@media (max-width: 480px) {
+  .top-bar h2 {
+    font-size: 18px;
+  }
+
+  .clienti-table td::before {
+    min-width: 100%;
+    margin-right: 0;
+  }
+}
+
+.modal-content select,
+.modal-content input[type="text"] {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.btn-export {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn-export:hover {
+  background-color: #45a049;
+}

@@ -1,0 +1,28 @@
+# Dipendenze
+/vendor/
+
+# Configurazione locale / segreti
+.env
+.env.*
+!.env.example
+config/db.local.php
+
+# Dump e backup database (ammessi solo schema e seed)
+*.sql
+!sql/schema.sql
+!sql/seed.sql
+*.bak
+*.zip
+
+# Media pesanti
+/video/
+
+# Log
+*.log
+logs/
+
+# File di sistema / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

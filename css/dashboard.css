@@ -1,0 +1,187 @@
+/* Reset base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* Contenitore principale centrato */
+.dashboard-container {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Griglia delle card */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  width: 100%;
+}
+
+/* Card base */
+.card {
+  background: linear-gradient(to bottom right, #fff, #f8f9fa);
+  border-radius: 14px;
+  padding: 25px 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card.full-width {
+  width: 100%;
+  margin-top: 40px;
+  padding: 25px 20px;
+}
+
+.card-content {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.card h4 {
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1c1c1c;
+  margin-bottom: 20px;
+}
+
+/* Header interno card */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.dashboard-filtri a {
+  text-decoration: none;
+  margin-left: 10px;
+  padding: 6px 12px;
+  border: 1px solid #2196F3;
+  border-radius: 6px;
+  color: #2196F3;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.dashboard-filtri a.active,
+.dashboard-filtri a:hover {
+  background-color: #2196F3;
+  color: white;
+}
+
+/* Tabella risultati */
+.tabella-risultati {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.tabella-risultati th,
+.tabella-risultati td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabella-risultati th {
+  background-color: #f0f4f8;
+  color: #555;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.tabella-risultati td {
+  color: #444;
+}
+
+/* Stato */
+.stato.pagata {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.stato.non-pagata {
+  color: #F44336;
+  font-weight: bold;
+}
+
+/* Grafici */
+canvas {
+  width: 100% !important;
+  height: 200px !important;
+  max-height: 250px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 20px 10px;
+  }
+
+  .card h3 {
+    font-size: 24px;
+  }
+
+  .card {
+    padding: 18px 14px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .dashboard-filtri {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .dashboard-filtri form {
+    width: 100%;
+  }
+
+  .dashboard-filtri form > * {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .tabella-risultati {
+    min-width: 520px;
+  }
+
+  .tabella-risultati th,
+  .tabella-risultati td {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
