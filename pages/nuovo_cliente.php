@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $i + 1,
                     $rata,
                     $data_scadenza->format('Y-m-d'),
-                    "Rata {$i + 1} - Finanziamento Interno"
+                    "Rata " . ($i + 1) . " - Finanziamento Interno"
                 ]);
             }
         } elseif ($pagamento === 'rateale_compass') {
