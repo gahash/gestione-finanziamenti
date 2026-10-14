@@ -1,5 +1,7 @@
 # Gestione Finanziamenti
 
+[![Controllo sintassi PHP](https://github.com/gahash/gestione-finanziamenti/actions/workflows/php-lint.yml/badge.svg)](https://github.com/gahash/gestione-finanziamenti/actions/workflows/php-lint.yml)
+
 Applicazione web gestionale in PHP per la gestione di clienti, vendite rateali e finanziamenti: anagrafica clienti, piani di rateizzazione, scadenziario, incassi, uscite, lead commerciali, esportazioni Excel e dashboard riepilogativa.
 
 ## Funzionalità
